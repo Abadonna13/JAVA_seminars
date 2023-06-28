@@ -1,5 +1,7 @@
 package src.main.Homeworks;
 
+import java.util.Arrays;
+
 public class Work1 {
     public static void main(String[] args) {
         System.out.println(isSumBetween10And20(5, 10)); // true
@@ -7,17 +9,30 @@ public class Work1 {
         System.out.println(isSumBetween10And20(7, 15)); // false
         System.out.println(isSumBetween10And20(2, 6)); // false
 
+        System.out.println("");
+
         System.out.println(isPositive(5)); // true
         System.out.println(isPositive(0)); // false
         System.out.println(isPositive(-3)); // false
 
+        System.out.println("");
+
         printString("abcd", 5); // abcdabcdabcdabcdabcd
+
+        System.out.println(isLeapYear(2016));
 
         int[] arr = createArray(5, 10);
         System.out.println(Arrays.toString(arr)); // [10, 10, 10, 10, 10]
 
         int[][] array = new int[4][4]; // [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, x], [0, 0, 0, 1]]
         int x = array[2][3];
+
+        System.out.println("");
+
+
+
+
+
     }
 
     /**
@@ -26,27 +41,33 @@ public class Work1 {
      */
     private static boolean isSumBetween10And20(int a, int b) {
         // проверить, что сумма a и b лежит между 10 и 20
-        return false;
+        return (10 <= (a + b) && (a + b) <= 20);
     }
 
     private static boolean isPositive(int x) {
         // проверить, что х положительное
-        return false;
+        return x > 0;
     }
 
     private static void printString(String source, int repeat) {
         // напечатать строку source repeat раз
+        String newString = source.repeat(repeat);
+        System.out.println(newString);
     }
 
     private static boolean isLeapYear(int year) {
         // проверить, является ли год високосным. если да - return true
         // год является високосным, если он делится на 4, но не делится на 100, но делится на 400
-        return false;
+        return ((year % 400 == 0) || (year % 4 == 0) && (year % 100 != 0)) ;
     }
 
     private static int[] createArray(int len, int initialValue) {
         // должен вернуть массив длины len, каждое значение которого равно initialValue
-        return null;
+        int[] arr = new int[len];
+        for (int i = 0; i < arr.length; i++) {
+          arr[i]  = initialValue;
+        }
+        return arr;
     }
 
 /**
@@ -62,4 +83,7 @@ public class Work1 {
  *
  * 4. Подготовить вопросы к следующему уроку.
  */
-}
+
+
+
+
