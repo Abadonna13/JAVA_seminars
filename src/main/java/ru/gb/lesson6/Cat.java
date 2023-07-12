@@ -25,16 +25,16 @@ public class Cat {
     }
 
     public void eat(Plate plate) {
-        if (satiety == 1) {
+        if (satiety == 10) {
             return;
         }
 
-        satiety = plate.decreaseFood(appetite);
+        satiety = (appetite - plate.decreaseFood(appetite * (10 - satiety) / 10)) * 10 / appetite;
     }
 
     @Override
     public String toString() {
-        return name + " [" + appetite + "], " + "satiety?" + satiety;
+        return name + " [" + appetite + "], " + "satiety = " + satiety;
     }
 
     @Override

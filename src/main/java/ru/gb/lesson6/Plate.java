@@ -24,9 +24,12 @@ public class Plate {
 
     public int decreaseFood(int food) {
         if (this.food >= food) {
-            return this.food -= food;
+        this.food -= food;
+        return 0;
         }
-        return false;
+        food -= this.food;
+        this.food = 0;
+        return food;
     }
 
     @Override
